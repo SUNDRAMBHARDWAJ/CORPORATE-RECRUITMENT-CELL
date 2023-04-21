@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Untitled Document</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+
+<link rel="stylesheet" href="CSS/search_job.css" type="text/css">
+<link rel="stylesheet" href="CSS/Design.css" type="text/css">
+
+<script language="JavaScript">
+
+ function pv(ThisForm)
+  {
+     
+
+    if (ThisForm.Experience.value == "")
+    {
+      alert("Please Enter Your \"Question no\".");
+      ThisForm.Experience.focus();
+      return(false);
+    }
+}
+	 function cblur(ThisField)
+   {
+		cnt=0
+		var val=ThisField.value
+		len=val.length
+		if(len !=0)
+		{
+		  for(i=0;i<len;i++)
+		  {
+			c=val.substr(i,1)
+			if(c==" ") cnt++
+		  }
+		  if(cnt==len)
+		  {
+			ThisField.value=""
+			alert("Your Input Contains Only Space")
+			ThisField.focus();
+			return(false);
+		  }
+		}
+	  r=0
+ 
+	  //*******************************
+	  if((ThisField.name=="Experience"))
+	  {
+		for(i=0;i<len;i++)
+		{
+		  c=val.substr(i,1)
+		  if((c<"0" ||c>"9") && (c!="-"))
+		  {
+			r=r+1
+		  }
+		}
+		if(r>0)
+		{
+		  alert("Enter Only \"EXPERIENCE\"!")
+		  ThisField.value= "";
+		  ThisField.focus();
+		  return(false);
+		}
+	  }
+}
+function foc()
+ {
+  document.forgot.codeedit.focus();
+ }
+</script>
+</HEAD>
+<BODY text=#000000  leftMargin=0 topMargin=0>
+<nav id="main-menuBar">
+			<ul id="main-menuBar">
+                        
+                  <li class="no-sub"><a href="contact.html" class="top" style="text-decoration:none">Contact us</a></li>                    
+                  <li class="no-sub">
+				  <a href="about.html" class="top" style="text-decoration:none">About</a></li>
+                  <li class="no-sub">
+						<a href="index.html" class="top" style="text-decoration:none">Home</a>
+					</li>
+             </ul>
+            </nav>
+<div class="clearfix"></div>
+            <footer id="main-footer-mainpage">
+            			<header id="footer-header">
+                            <h2 class="visuallyHidden"></h2>
+                            <img src="" >
+                        </header>
+                    <nav id="footer-nav">
+                        <ul id="common-links">
+                            <ul>CORPORATE RECRUITMENT SYSYTEM</ul>
+                        </ul>
+                    </nav>
+                    <div class="clearfix"></div>
+                    <div id="copyright">
+                        <small id="copy">
+                           Copyright &copy; 2015 kassinda.com All rights reserved.
+                        </small>
+                    </div>
+                </footer>
+<div class="form1">
+	<ul>
+<TABLE cellSpacing=0 cellPadding=0 width=200 border=0>
+<TBODY>
+<form name=search action="search.jsp" method="post" onsubmit="return pv(this)">
+<TR> <TD vAlign=top height=200>
+<TABLE cellSpacing=0 cellPadding=0 width="784" border=0 height="200">
+<TBODY><TR>
+<TD vAlign=top width=1  rowspan="20" height="200">&nbsp;</TD>
+<TD vAlign=top width=766  colspan="3" height="24">&nbsp;</TD></TR>
+<TR> <TD vAlign=top width=766 colspan="3" height="10">
+<p align="left"><b><font size="4">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+<font color="#104E8B" size="5">Advanced Search</font></b></TD></TR>
+<TR> <TD vAlign=top width=766  colspan="3" height="24"> 
+&nbsp;</TD></TR><TR>
+<TD vAlign=top width=41  height="108" rowspan="4">
+<p align="right"><span class="text">&nbsp;</span>&nbsp;&nbsp;&nbsp;
+<p align="left"><span class="text">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p align="right">&nbsp;</TD>
+<TD vAlign=top width=178  height="28">&nbsp;</TD></TR>
+<TR> <TD vAlign=top width=178  height="31"><span class="text">
+<font face="MS Sans Serif" color="black" size="4">Search by Experience</font></span></TD>
+<TD vAlign=top width=547  height="46">&nbsp; 
+<font color="#ae0000"><select name="Experience" size="1" tabIndex="1">
+	<option>Experience</option>
+	<option value="0-1">0-1</option>
+	<option value="1-2">1-2</option>
+	<option value="2-3">2-3</option>
+	<option value="3-4">3-4 </option>
+	<option value="4-5">4-5</option>
+	<option value="5-7">5-7</option>
+	<option value="7-10">7-10</option>
+	<option value="10-100">&gt;10</option>
+</select></font></TD></TR>
+<div id="but">
+ <input type="submit" name="submit"  class="login-submit" value="SEARCH" tabindex="2" >
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" name="Submit2" value="RESET" class="login-submit"tabindex="3">
+</TD></TR></TBODY></TABLE></TD></TR>
+</ul>
+</div>
+</div>
+</form>
+</TBODY></TABLE>
+</BODY>
+</HTML>

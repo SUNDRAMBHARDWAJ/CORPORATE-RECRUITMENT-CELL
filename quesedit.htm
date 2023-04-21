@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>TEST QUESTION EDIT</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+<link rel="stylesheet" href="CSS/edit_job.css" type="text/css">
+<link rel="stylesheet" href="CSS/fo_jo.css" type="text/css">
+<link rel="stylesheet" href="CSS/job_home.css" type="text/css">
+
+<script language="JavaScript">
+ function pv(ThisForm)
+  {
+     
+
+    if (ThisForm.codeedit.value == "")
+    {
+      alert("Please Enter Your \"QUESTION CODE\".");
+      ThisForm.codeedit.focus();
+      return(false);
+    }
+}
+	 function cblur(ThisField)
+   {
+		cnt=0
+		var val=ThisField.value
+		len=val.length
+		if(len !=0)
+		{
+		  for(i=0;i<len;i++)
+		  {
+			c=val.substr(i,1)
+			if(c==" ") cnt++
+		  }
+		  if(cnt==len)
+		  {
+			ThisField.value=""
+			alert("Your Input Contains Only Space")
+			ThisField.focus();
+			return(false);
+		  }
+		}
+	  r=0
+ 
+	  //*******************************
+	  if((ThisField.name=="codeedit"))
+	  {
+		for(i=0;i<len;i++)
+		{
+		  c=val.substr(i,1)
+		  if((c<"0" ||c>"9") && (c!="-"))
+		  {
+			r=r+1
+		  }
+		}
+		if(r>0)
+		{
+		  alert("Enter Only \"NUMBERS\"!")
+		  ThisField.value= "";
+		  ThisField.focus();
+		  return(false);
+		}
+	  }
+}
+function foc()
+ {
+  document.cf.codeedit.focus();
+ }
+
+
+</script>
+</HEAD>
+<BODY>
+<form name="cf" action="testedits.jsp" method="post" onsubmit="return pv(this)">
+  <div class="form1">
+	<ul>
+	<li>ENTER QUESTION NUMBER <input type="text" name="codeedit" Onblur='cblur(codeedit)' size="17" tabindex="1"></li>
+		<div id="submitbut">
+		<input type="submit" name="submit"  class="login-submit" value="EDIT" tabindex="2" >
+          </div>
+		  </div>
+
+<!--<div class="clearfix"></div>
+            <footer id="main-footer-mainpage">
+            			<header id="footer-header">
+                            <h2 class="visuallyHidden"></h2>
+                            <img src="" >
+                        </header>
+                    <nav id="footer-nav">
+                        <ul id="common-links">
+                            <ul>CORPORATE RECRUITMENT SYSYTEM</ul>
+                        </ul>
+                    </nav>
+                    <div class="clearfix"></div>
+                    <div id="copyright">
+                        <small id="copy">
+                           Copyright &copy; 2015 kassinda.com All rights reserved.
+                        </small>
+                    </div>
+                </footer>-->
+		  </form>
+</BODY>

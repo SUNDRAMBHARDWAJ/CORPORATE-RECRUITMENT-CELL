@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>TEST_LOGIN</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+<link rel="stylesheet" href="CSS/login_style.css" type="text/css">
+<script language="JavaScript">
+function valid(ThisForm)
+{
+ if(ThisForm.uname.value=="") 
+    {
+     alert("Enter Login id") ; 
+     ThisForm.uname.focus();
+     return false;
+    }
+  if(ThisForm.password.value=="") 
+    {
+     alert("Enter password");
+     return false;
+    }
+ }
+  function cblur(ThisField)
+  {
+    cnt=0
+    var val=ThisField.value
+    len=val.length
+    if(len !=0)
+    {
+      for(i=0;i<len;i++)
+      {
+        c=val.substr(i,1)
+        if(c==" ") cnt++
+      }
+      if(cnt==len)
+      {
+        ThisField.value=""
+        alert("Your Input Contains Only Space")
+        ThisField.focus();
+        return(false);
+      }
+    }
+  	r=0
+
+  if(ThisField.name=="uname") 
+  {
+
+		
+    for(i=0;i<len;i++)
+    {
+      c=val.substr(i,1)
+      if((c<"0" ||c>"9") && (c!="-"))
+      {
+        r=r+1
+      }
+    }
+    if(r>0)
+    {
+      alert("Login Id Contains Only \"NUMBERS\"!")
+      ThisField.value= "";
+      ThisField.focus();
+      return(false);
+    }
+  }
+}
+</script>
+</HEAD>
+<BODY>
+<form  action="onlinevalid.jsp" method="post" onsubmit="return valid(this)" target="_top">
+ <div class="login-card">
+ <h1>Online Test</h1><br>
+<input type="text" name="uname" placeholder="Username" Onblur='cblur(uname)' tabindex="1"> 
+<input type="password" name="password" placeholder="Password" tabindex="2">
+<input type="submit" name="submitbutton"  class="login login-submit" value="ENTER"  tabindex="3">
+</form>
+    
+  <div class="login-help">
+    <!--<a href="#">Register</a> . <a href="#">Forgot Password</a> -->
+  </div>
+</div>
+</body>
+</HTML>
